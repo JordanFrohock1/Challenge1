@@ -30,12 +30,7 @@ public class Challenge1{
                 System.out.println("Invalid Input, Please Try Again");
             }
         }
+    }
 
-        }
-
-    
-    
-    
-    
-    
+     
 }
