@@ -85,6 +85,8 @@ public class Challenge1{
         }
     }
 
+     
+
     void ItemsForSale() {
         System.out.println("Displaying items for sale...");
     }
