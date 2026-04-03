@@ -153,13 +153,10 @@ public class Challenge1 {
         }
     }
 
-    // Display all items
-    void displayItemsForSale() {
-        System.out.println("\nItems currently for sale:");
-        for (Item item : itemsForSale) {
-            item.printDetails();
-            System.out.println("---");
-        }
+     
+
+    void ItemsForSale() {
+        System.out.println("Displaying items for sale...");
     }
 
     // Add a new item for sale
