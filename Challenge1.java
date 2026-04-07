@@ -142,7 +142,7 @@ public class Challenge1 {
             String userInput = scanner.nextLine();
 
             if (userInput.equals("1")) {
-                displayItemsForSale();
+                ItemsForSale();
             } else if (userInput.equals("2")) {
                 addItem();
             } else if (userInput.equals("3")) {
