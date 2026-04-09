@@ -52,14 +52,15 @@ public class Challenge1 {
 
                 boolean running = true;
                 while (running) {
-                    System.out.println("\nMain Menu:\n1. Buy\n2. Sell\n3. Logout");
+                    System.out.println("\nMain Menu:\n1. Buy\n2. Sell\n3. Cart\n4. Logout");
                     String choice = scanner.nextLine();
-
                     if (choice.equals("1")) {
                         app.buyMenu();
                     } else if (choice.equals("2")) {
                         app.sellMenu();
                     } else if (choice.equals("3")) {
+                        app.cartMenu();
+                    } else if (choice.equals("4")) {
                         System.out.println("Logged out.");
                         running = false;
                     } else {
@@ -142,7 +143,7 @@ public class Challenge1 {
             String userInput = scanner.nextLine();
 
             if (userInput.equals("1")) {
-                displayItemsForSale();
+                ItemsForSale();
             } else if (userInput.equals("2")) {
                 addItem();
             } else if (userInput.equals("3")) {
@@ -153,7 +154,34 @@ public class Challenge1 {
         }
     }
 
-     
+
+    //Cart menu
+    void cartMenu() {
+        boolean isRunning = true;
+        while (isRunning) {
+            System.out.println("\nCart:");
+            double total = 0;
+            for (int i = 0; i < cart.size(); i++) {
+                System.out.println((i + 1) + ". " + cart.get(i).name + " - $" + cart.get(i).price);
+                total += cart.get(i).price;
+            }
+            System.out.println("Total: $" + total);
+            System.out.println("\n1. Checkout\n2. Back");
+            String choice = scanner.nextLine();
+    
+            if (choice.equals("1")) {
+                for (Item item : cart) {
+                    itemsForSale.remove(item);
+                }
+                cart.clear();
+                System.out.println("Purchase successful!");
+            } else if (choice.equals("2")) {
+                isRunning = false;
+            } else {
+                System.out.println("Invalid option.");
+            }
+        }
+    }
 
     void ItemsForSale() {
         System.out.println("Displaying items for sale...");
